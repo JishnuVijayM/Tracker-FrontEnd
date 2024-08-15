@@ -1,4 +1,5 @@
 import './App.css'
+import Navbar from './Components/Navbar'
 import Login from './Pages/Login'
 import Register from './Pages/Register'
 
@@ -6,8 +7,9 @@ function App() {
 
   return (
     <>
-     <Login/>
-     <Register/>
+      <Navbar />
+      <Login />
+      <Register />
     </>
   )
 }
