@@ -8,6 +8,16 @@ function TaskList() {
   const userId = localStorage.getItem('USER_ID');
   const [loading, setLoading] = useState(false)
 
+  const tableHeaders = [
+    { key: 'taskName', label: 'Task Name' },
+    { key: 'projectName', label: 'Project Name' },
+    { key: 'category', label: 'Category' },
+    { key: 'priority', label: 'Priority' },
+    { key: 'status', label: 'Status' },
+    { key: 'completionDate', label: 'Completion Date' },
+    { key: 'action', label: 'Action' },
+  ];
+
   useEffect(() => {
 
     const fetchData = async () => {
@@ -35,7 +45,7 @@ function TaskList() {
   return (
     <>
       {tableData && !loading ? (
-        <Table tblData={tableData} />
+        <Table tblData={tableData} tableHeaders={tableHeaders} />
       ) : (
         <Loading />
       )}

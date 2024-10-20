@@ -9,6 +9,7 @@ import LogoImage from "../assets/Logo/Logo.png";
 import { UserProvider } from '../store/userContext';
 import EditTask from './EditTask';
 import Avathar from '../Components/Avathar';
+import OverAll from './OverAll';
 
 
 const Layout = () => {
@@ -71,7 +72,7 @@ const Layout = () => {
                                     />
                                 </svg>
                             </button>
-                            <a href="#" className="flex ms-2 md:me-24">
+                            <a href="/home/dashboard" className="flex ms-2 md:me-24">
                                 <img
                                     src={LogoImage}
                                     className="h-8 me-3"
@@ -133,6 +134,7 @@ const Layout = () => {
                         <Route path="dashboard" element={<Dashboard />} />
                         <Route path="tasklist" element={<TaskList />} />
                         <Route path="createtask" element={<CreateTask />} />
+                        <Route path="overall" element={<OverAll />} />
                         <Route path="editTask/:id" element={<EditTask />} />
                     </Routes>
                 </UserProvider>

@@ -330,16 +330,22 @@ function CreateTask() {
                         </div>
 
                         <div className="flex justify-end align-center w-full">
-                            <button type="submit" className="bg-blue-700 text-white rounded-lg px-4 py-2">
-                            {loading ? (
-                            <svg className="animate-spin h-5 w-5 mr-3" viewBox="0 0 24 24">
-                                <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="4" fill="none" />
-                                <path d="M4 12a8 8 0 0 1 8-8" stroke="blue" strokeWidth="3" strokeLinecap="round" />
-                            </svg>
-                        ) : null}
-                        {loading ? 'Loading...' : 'Submit Task'} 
-                            </button>
-                        </div>
+                                <button type="submit" className="bg-blue-600 text-white rounded-lg px-4 py-2">
+                                    {loading ? (
+                                        <>
+                                            <svg className="animate-spin h-5 w-5 mr-2" viewBox="0 0 24 24">
+                                                <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="4" fill="none" />
+                                                <path d="M4 12a8 8 0 0 1 8-8" stroke="blue" strokeWidth="3" strokeLinecap="round" />
+                                            </svg>
+                                            Loading...
+                                        </>
+                                    ) : (
+                                        'Submit Task'
+                                    )}
+                                </button>
+                            </div>
+
+                        
                     </form>
                 </div>
             </div>

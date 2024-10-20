@@ -54,3 +54,21 @@ export async function editTask(id, data) {
         return error.response ? error.response : { status: 500, data: error };
     }
 }
+
+export async function getDashboard() {
+    try {
+        const response = await axiosInstance.get(`/api/getDashboard`);
+        return response;
+    } catch (error) {
+        return error.response ? error.response : { status: 500, data: error };
+    }
+}
+
+export async function getTaskForOverview() {
+    try {
+        const response = await axiosInstance.get(`/api/task/getAllTasksForOverview`);
+        return response;
+    } catch (error) {
+        return error.response ? error.response : { status: 500, data: error };
+    }
+}

@@ -19,7 +19,10 @@ function CreateTask() {
     const urlPath = window.location.pathname;
     const [userName, _] = useState(decrypt("ENC_USERNAME"));
     const id = urlPath.split('/').pop();
-    const [projectName, setProjectName] = useState("")
+    const [projectDetails, setProjectDetails] = useState({
+        projectName:'',
+        currentStatus:'',
+    })
     const [updatedDate, setUpdatedDate] = useState()
 
     const [formData, setFormData] = useState({
@@ -109,7 +112,10 @@ function CreateTask() {
                     updatedDate: new Date()
                     // updatedDate: taskData.updatedDate ? new Date(taskData.updatedDate) : new Date(taskData.startDate),
                 });
-                setProjectName(taskData.projectName || '')
+                setProjectDetails({
+                    projectName:taskData.projectName || '',
+                    currentStatus:taskData.taskStatus || '',
+                })
                 setUpdatedDate(taskData.updatedDate ? new Date(taskData.updatedDate) : new Date(taskData.startDate))
                 setSelected(selectedUsers);
                 setLoading(false)
@@ -183,7 +189,7 @@ function CreateTask() {
                                     <h2 className='mt-1 text-sm font-medium text-gray-900'>Current Status </h2>
                                 </div>
                                 <div className="w-full md:w-4/6 px-2 mb-4">
-                                    <h2>: {formData.taskStatus}</h2>
+                                    <h2>: {projectDetails.currentStatus}</h2>
                                 </div>
 
                                 <div className="w-full md:w-1/3 px-2 mb-4">
@@ -254,8 +260,6 @@ function CreateTask() {
                                 </div>
 
 
-
-
                                 <div className="w-full md:full px-2 mb-4">
                                     <label htmlFor="description" className="block mb-2 text-sm font-medium text-gray-900">
                                         Description<span className="text-red-500 ms-1">*</span>
@@ -274,7 +278,7 @@ function CreateTask() {
                             </div>
 
                             <div className="flex justify-end align-center w-full">
-                                <button type="submit" className="bg-blue-500 text-white rounded-lg px-4 py-2">
+                                <button type="submit" className="bg-blue-600 text-white rounded-lg px-4 py-2">
                                     {loading ? (
                                         <>
                                             <svg className="animate-spin h-5 w-5 mr-2" viewBox="0 0 24 24">
@@ -320,7 +324,7 @@ function CreateTask() {
                                 <h2 className='pt-1 text-sm font-medium text-gray-900'>Project Name</h2>
                             </div>
                             <div className="w-full md:w-4/6 px-2 mb-3" style={{ marginTop: "1px" }}>
-                                <h2>: {projectName}</h2>
+                                <h2>: {projectDetails.projectName}</h2>
                             </div>
                         </div>
 
