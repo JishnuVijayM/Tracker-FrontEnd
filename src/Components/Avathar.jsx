@@ -10,7 +10,7 @@ function Avathar() {
     const [openModal, setOpenModal] = useState(false);
     const [avatharName, setAvatharName] = useState(userName.slice(0, 1).toUpperCase());
 
-    const handleChildData = (data) => {
+    const handleChildData = (data) => { 
         setOpenModal(data);
     };
 

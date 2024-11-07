@@ -40,7 +40,7 @@ function CreateTask() {
         { label: 'In Progress', value: 'In Progress' },
         { label: 'On Hold', value: 'On Hold' },
         { label: 'Completed', value: 'Completed' },
-        { label: 'Testing In Progress', value: 'Testing In Progress' },
+        { label: 'Testing In Progress', value: 'Testing In Progress'},
         { label: 'Testing Completed', value: 'Testing Completed' },
         { label: 'Move To Production', value: 'Move To Production' },
     ];
@@ -344,7 +344,6 @@ function CreateTask() {
                                     )}
                                 </button>
                             </div>
-
                         
                     </form>
                 </div>

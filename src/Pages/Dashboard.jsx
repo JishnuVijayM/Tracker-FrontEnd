@@ -10,7 +10,7 @@ function Dashboard() {
   const [pieChartData, setPieChartData] = useState([])
   const [barChartData, setBarChartData] = useState([])
   const [totelSum, setTotelSum] = useState(0)
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false)  
 
   useEffect(() => {
     const fetchDashboardData = async () => {
@@ -57,9 +57,6 @@ function Dashboard() {
               </div>
             ))}
           </div>
-
-
-
 
           {/* chart */}
 
