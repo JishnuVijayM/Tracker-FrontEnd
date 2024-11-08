@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import { decrypt } from '../utilis/decription';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Link } from 'react-router-dom';
-import Modal from './modal';
-
+import Modal from "./Modal";
 
 function Avathar() {
     const [userName, _] = useState(decrypt("ENC_USERNAME"));
